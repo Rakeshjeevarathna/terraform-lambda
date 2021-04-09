@@ -1,6 +1,6 @@
 resource "aws_lambda_function" "myfunc" {
   filename         = "lambda.py.zip"
-  function_name    = "mylambdafunction"
+  function_name    = "mylambdafunction3"
   handler          = "lambda.lambdaHandler"
   source_code_hash = filebase64sha256("lambda.py.zip")
   role             = aws_iam_role.lambdarole.arn
@@ -35,7 +35,7 @@ resource "aws_s3_bucket" "s3bucket" {
 }
 
 resource "aws_cloudwatch_log_group" "cwlogs" {
-  name              = "/aws/lambda/mylambdafunction"
+  name              = "/aws/lambda/mylambdafunction3"
   retention_in_days = 14
 }
 
