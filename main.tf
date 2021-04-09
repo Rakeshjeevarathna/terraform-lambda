@@ -10,7 +10,7 @@ resource "aws_lambda_function" "myfunc" {
 
 
 resource "aws_iam_role" "lambdarole" {
-  name               = "basiclambdarole-mandeep"
+  name               = "basiclambdarole-rakesh"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -31,7 +31,7 @@ EOF
 
 
 resource "aws_s3_bucket" "s3bucket" {
-  bucket = "s3lambdatriggerexamplemandeep"
+  bucket = "s3lambdatriggerexamplerakesh"
 }
 
 resource "aws_cloudwatch_log_group" "cwlogs" {
@@ -40,7 +40,7 @@ resource "aws_cloudwatch_log_group" "cwlogs" {
 }
 
 resource "aws_iam_policy" "lambda_logging" {
-  name        = "lambda_logging_mandeep"
+  name        = "lambda_logging_rakesh"
   path        = "/"
   description = "IAM policy for logging from a lambda"
 
@@ -68,7 +68,7 @@ resource "aws_iam_role_policy_attachment" "lambda_logs" {
 }
 
 
-# s3lambdatriggerexamplemandeep
+# s3lambdatriggerexamplerakesh
 
 resource "aws_lambda_permission" "allow_bucket" {
   statement_id  = "AllowExecutionFromS3Bucket"
